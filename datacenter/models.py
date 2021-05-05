@@ -35,7 +35,7 @@ def get_current_duration(visit):
     return delta.total_seconds()
 
 
-def get_durations(visit):
+def get_durations_for_all_time(visit):
     exit_time = localtime(value=visit.leaved_at, timezone=None)
     entrance_time = localtime(value=visit.entered_at, timezone=None)
     delta = exit_time - entrance_time
@@ -43,9 +43,9 @@ def get_durations(visit):
 
 
 def format_duration(duration):
-    all_seconds = int(duration)
-    hours = all_seconds // 3600
-    minutes = (all_seconds % 3600) // 60
+    number_of_seconds_total = int(duration)
+    hours = number_of_seconds_total // 3600
+    minutes = (number_of_seconds_total % 3600) // 60
     return f"{hours}ч {minutes}мин"
 
 
