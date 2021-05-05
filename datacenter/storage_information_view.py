@@ -12,12 +12,12 @@ def storage_information_view(request):
     for visit in visits:
         non_closed_visits = []
         visitor_name = visit.passcard.owner_name
-        then = localtime(value=visit.entered_at, timezone=None)
+        when_entrance = localtime(value=visit.entered_at, timezone=None)
         duration = get_duration(visit)
         time_spent = format_duration(duration)
         non_closed_visit = {
             "who_entered": visitor_name,
-            "entered_at": then,
+            "entered_at": when_entrance,
             "duration": time_spent,
             }
         non_closed_visits.append(non_closed_visit)
