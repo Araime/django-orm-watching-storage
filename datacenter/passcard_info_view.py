@@ -1,5 +1,4 @@
-from datacenter.models import Passcard
-from datacenter.models import Visit
+from datacenter.models import Passcard, Visit
 from django.shortcuts import render
 from datacenter.models import get_durations_for_all_time, format_duration, is_visit_long
 from django.utils.timezone import localtime
