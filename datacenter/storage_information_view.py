@@ -1,7 +1,7 @@
 from datacenter.models import Visit
 from django.shortcuts import render
 from django.utils.timezone import localtime
-from .models import get_current_duration, format_duration
+from .models import get_duration, format_duration
 
 
 def storage_information_view(request):
@@ -11,7 +11,7 @@ def storage_information_view(request):
     for visit in visits:
         visitor_name = visit.passcard.owner_name
         entrance_time = localtime(value=visit.entered_at, timezone=None)
-        duration = get_current_duration(visit)
+        duration = get_duration(visit)
         how_much_is_there = format_duration(duration)
         non_closed_visit = {
             'who_entered': visitor_name,

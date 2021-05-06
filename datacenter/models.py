@@ -28,14 +28,7 @@ class Visit(models.Model):
         )
 
 
-def get_current_duration(visit):
-    current_time = localtime(value=None, timezone=None)
-    entrance_time = localtime(value=visit.entered_at, timezone=None)
-    delta = current_time - entrance_time
-    return delta.total_seconds()
-
-
-def get_durations_for_all_time(visit):
+def get_duration(visit):
     exit_time = localtime(value=visit.leaved_at, timezone=None)
     entrance_time = localtime(value=visit.entered_at, timezone=None)
     delta = exit_time - entrance_time
