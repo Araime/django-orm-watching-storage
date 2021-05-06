@@ -21,10 +21,10 @@ class Visit(models.Model):
     leaved_at = models.DateTimeField(null=True)
 
     def __str__(self):
-        return "{user} entered at {entered} {leaved}".format(
+        return '{user} entered at {entered} {leaved}'.format(
             user=self.passcard.owner_name,
             entered=self.entered_at,
-            leaved="leaved at " + str(self.leaved_at) if self.leaved_at else "not leaved"
+            leaved='leaved at ' + str(self.leaved_at) if self.leaved_at else 'not leaved'
         )
 
 
@@ -46,7 +46,7 @@ def format_duration(duration):
     number_of_seconds_total = int(duration)
     hours = number_of_seconds_total // 3600
     minutes = (number_of_seconds_total % 3600) // 60
-    return f"{hours}ч {minutes}мин"
+    return f'{hours}ч {minutes}мин'
 
 
 def is_visit_long(duration, minutes=60):

@@ -14,13 +14,13 @@ def storage_information_view(request):
         duration = get_current_duration(visit)
         how_much_is_there = format_duration(duration)
         non_closed_visit = {
-            "who_entered": visitor_name,
-            "entered_at": entrance_time,
-            "duration": how_much_is_there,
+            'who_entered': visitor_name,
+            'entered_at': entrance_time,
+            'duration': how_much_is_there,
             }
         non_closed_visits.append(non_closed_visit)
 
     context = {
-        "non_closed_visits": non_closed_visits,
+        'non_closed_visits': non_closed_visits,
     }
     return render(request, 'storage_information.html', context)

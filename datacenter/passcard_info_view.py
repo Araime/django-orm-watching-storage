@@ -15,14 +15,14 @@ def passcard_info_view(request, passcode):
         spent_time = format_duration(duration)
         suspicious_or_not = is_visit_long(duration, minutes=60)
         this_passcard_visit = {
-                "entered_at": entrance_time,
-                "duration": spent_time,
-                "is_strange": suspicious_or_not
+                'entered_at': entrance_time,
+                'duration': spent_time,
+                'is_strange': suspicious_or_not
                 }
         this_passcard_visits.append(this_passcard_visit)
 
     context = {
-        "passcard": passcard,
-        "this_passcard_visits": this_passcard_visits
+        'passcard': passcard,
+        'this_passcard_visits': this_passcard_visits
     }
     return render(request, 'passcard_info.html', context)
