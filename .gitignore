@@ -1,0 +1,6 @@
+venv/
+venv1/
+
+/.replit
+/poetry.lock
+/pyproject.toml
