@@ -1,9 +1,72 @@
-The program can connect to the database, send requests, and display data on 
-the site. Receives cards of all bank employees and displays only active passes 
-on the main page.  
-Additional features are also implemented:  
-On a separate page of the site, you can see who is currently in the storage and
-the duration of the stay.  
-On the main page, when you click on the employee's name, you can get a list of 
-his visits for all the time. If the duration of the session was more than one 
-hour, the True flag is displayed in the column " was the session suspicious?"  
+# Пульт охраны банка
+## (Учебный проект на Django framework)
+
+Программа подключается к базе данных, отправляет запросы и 
+отображает данные на локальном сайте. 
+
+### Как установить?
+
+#### Скачать
+
+Python3 должен быть уже установлен. Скачать этот репозиторий себе на компьютер.
+
+Рекомендуется использовать [virtualenv/venv](https://docs.python.org/3/library/venv.html)
+для изоляции проекта.
+
+#### Быстрая настройка venv
+
+Начниая с версии Python 3.3 виртуальное окружение идёт в комплекте в виде модуля
+venv. Чтобы его установить и активировать нужно выполнить следующие действия в
+командной строке:  
+
+Указать репозиторий в качестве каталога.
+```
+cd C:\Users\Ваш_пользователь\Downloads\django-orm-watching-storage-master
+```
+Установить виртуальное окружение в выбраном каталоге.
+```
+Python -m venv env
+```
+В репозитории появится папка виртуального окружения env
+<a href="https://imgbb.com/"><img src="https://i.ibb.co/Hn4C6PD/image.png" alt="image" border="0"></a>
+
+Активировать виртуальное окружение.
+```
+env\scripts\activate
+```
+Теперь вы работаете в виртуальном окружении.
+<a href="https://imgbb.com/"><img src="https://i.ibb.co/tqRT7Z6/2.png" alt="2" border="0"></a>
+
+#### Установить зависимости
+
+Используйте `pip` (или `pip3`, есть конфликт с Python2) для установки 
+зависимостей:
+
+```python
+pip install -r requirements.txt
+```
+
+### Использование
+
+Для запуска скрипта достаточно запустить исполняемый файл main.py
+```
+python main.py
+```
+Скрипт запущен, сайт доступен по локальному адресу [http://127.0.0.1:8000/](http://127.0.0.1:8000/)
+
+Программа получает карты всех сотрудников банка и отображает только активные 
+пропуска на главной странице.  
+
+Также реализованы дополнительные функции:  
+
+  1. На отдельной странице сайта вы можете посмотреть, кто в данный момент 
+находится в хранилище и продолжительность пребывания.  
+  1. На главной странице, когда вы нажимаете на имя сотрудника, вы можете 
+получить список его посещений за все время. Если продолжительность 
+сеанса составляла более одного часа, в столбце "был ли сеанс 
+подозрительным?" отображается флаг True."
+
+### Цель проекта
+
+Код написан в образовательных целях на онлайн-курсе для веб-разработчиков 
+[dvmn.org](https://dvmn.org).
