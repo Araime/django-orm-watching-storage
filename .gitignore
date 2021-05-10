@@ -1,6 +1,6 @@
-venv/
-venv1/
-
+/venv/
+/venv1/
+/.idea/
 /.replit
 /poetry.lock
 /pyproject.toml
